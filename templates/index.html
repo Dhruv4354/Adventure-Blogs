@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+{% block content %}
+
+    <!-- banner blog section -->
+    <section class="w3l-blog py-5">
+        <div class="w3l-main-blog py-4">
+            <div class="owl-blog owl-carousel owl-theme">
+                {% for post in post1 %}
+                {% set fname = 'assets/images/' + post.image %}
+             
+                <div class="item">
+                    <div class="news-img position-relative">
+                        <a href="/blogs/{{post.slug}}"><img src="{{url_for('static',filename=fname)}}" class="img-fluid img-responsive"
+                        alt="news image"></a>
+                        <div class="title-wrap">
+                            <h4 class="title"><a href="/blogs/{{post.slug}}">{{post.title}}</a></h4>
+                            <ul class="admin-list mt-2 mb-4">
+                                <li><a href="#blog"><i class="far fa-user"></i>{{post.posted_by}}
+                                    </a></li>
+                                <li><a href="/likes"><i class="far fa-heart"></i>11 Likes</a></li>
+                                <li><a href="#blog"><i class="far fa-comment-dots"></i>9 Comments</a>
+                                </li>
+                            </ul>
+                            <p>{{post.content[0:200]}} <a href="/blogs/{{post.slug}}">Read More...</a> </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                           </div>
+        </div>
+    </section>
+    <!-- //banner blog section -->
+
+    <!-- 2 col section -->
+    <section class="w3l-blog-sec py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row justify-content-center">
+
+                {% for post3 in post %}
+                
+                
+                {% set fname = 'assets/images/' + post.image %}
+                <div class="col-md-6">
+                    <div class="blog-info">
+                        <div class="position-relative">
+                            <a href="/blogs/{{post.slug}}">
+                                <img class="img-fluid" src="{{url_for('static',filename=fname)}}" alt="blog-image">
+                            </a>
+                            <a href="/blogs/{{post.slug}}" class="category-style">{{post.category_style}}</a>
+                        </div>
+                        <div class="title-wrap title-wrap-2">
+                            <h4 class="title"><a href="#blog">{{post.title}}</a></h4>
+                            <ul class="admin-list mt-2 mb-4">
+                                <li><a href="#blog"><i class="far fa-user"></i>{{post.posted_by}}
+                                    </a></li>
+                                <li><a href="/likes"><i class="far fa-heart"></i>12</a></li>
+                                <li><a href="#blog"><i class="far fa-comment-dots"></i>9 Comments</a>
+                                </li>
+                            </ul>
+                            <p>{{post.content}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+                {% endfor %}
+           
+            </div>
+        </div>
+    </section>
+    <!-- //2 col section -->
+
+    <!-- 3 col section -->
+    <section class="w3l-blog-sec">
+        <div class="container">
+            <div class="row justify-content-center">
+                {% for post4 in post %}
+                {% set fname = 'assets/images/' + post.image %}
+           
+                <div class="col-xl-4 col-md-6 mt-md-0 mt-4">
+                    <div class="blog-info">
+                        <div class="position-relative">
+                            <a href="/blogs/{{post.slug}}">
+                                <img class="img-fluid" src="{{url_for('static',filename=fname)}}" alt="blog-image">
+                            </a>
+                            <a href="/blogs/{{post.slug}}" class="category-style">{{post.category_style}}</a>
+                        </div>
+                        <div class="title-wrap title-wrap-2">
+                            <h4 class="title"><a href="#blog">{{post.title}}</a></h4>
+                            <ul class="admin-list mt-2 mb-4">
+                                <li><a href="#blog"><i class="far fa-user"></i>Dracx
+                                    </a></li>
+                                <li><a href="#blog"><i class="far fa-heart"></i>14 Likes</a></li>
+                                <li><a href="#blog"><i class="far fa-comment-dots"></i>9 Comments</a>
+                                </li>
+                            </ul>
+                            <p>{{post.content}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //3 col section -->
+
+    <!-- bg with video icon -->
+    <section class="w3l-covers-14 pt-5">
+        <div class="container pt-md-5 pt-4">
+            <div class="blog-play-w3 text-center py-5">
+                <div class="mx-auto py-5 px-4" style="max-width:450px;">
+                    <h3 class="title-style text-white"> “Life is a fatal adventure. It can only have one end. So why not make it as far-ranging and free as possible”</h3>
+                    <ul class="admin-list mt-4 mb-4">
+                        <li><a href="#blog" class="text-white"><i class="far fa-user"></i>Dracx
+                            </a></li>
+                        <li><a href="#blog" class="text-white"><i class="far fa-heart"></i>10 Likes</a></li>
+                        <li><a href="#blog" class="text-white"><i class="far fa-comment-dots"></i>9
+                                Comments</a>
+                        </li>
+                    </ul>
+                    <div class="video-section mt-5 pt-4 pb-5">
+                        <!--//video-->
+                        <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center pl-3">
+                            <span class="video-play-icon">
+                                <span class="fas fa-play"></span>
+                            </span>
+                        </a>
+                        <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
+                        <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
+                          
+                            <iframe src="https://www.youtube.com/embed/NCWqrE1ozsw" frameborder="0"
+                                allow="autoplay; fullscreen" allowfullscreen></iframe>
+                        </div>
+                        <!--//video-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //bg with video icon -->
+
+    <!-- blog page -->
+    <section class="w3l-text-11 py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row">
+                <div class="col-lg-8 text11-content">
+                    <div class="row">
+                        {% for post in post2 %}
+                        
+                        {% set fname = 'assets/images/' + post.image %}
+                        <div class="col-sm-6 card mt-sm-0 mt-4">
+                            <div class="card-header p-0 position-relative border-0">
+                                <a href="/blogs/{{post.slug}}">
+                                    <img class="card-img-bottom d-block radius-image" src="{{url_for('static',filename=fname)}}"
+                                        alt="Card image cap">
+                                </a>
+                                <a href="/blogs/{{post.slug}}" class="category-style">{{post.category_style}}</a>
+                            </div>
+                            <div class="title-wrap title-wrap-2">
+                                <h4 class="title"><a href="/blogs/{{post.slug}}">{{post.title}}</a></h4>
+                                <ul class="admin-list mt-2 mb-4">
+                                    <li><a href="#blog"><i class="far fa-user"></i>Dracx
+                                        </a></li>
+                                    <li><a href="#blog"><i class="far fa-heart"></i> 11 Likes</a></li>
+                                    <li><a href="#blog"><i class="far fa-comment-dots"></i>3 Comments</a>
+                                    </li>
+                                </ul>
+                                <p>{{post.content[0:200]}}...
+                                </p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                            </div>
+                        </div>
+                   
+
+                <div class="sidebar-side col-lg-4 pl-lg-5 mt-lg-0 mt-5">
+                    <aside class="sidebar">
+                        <!-- Popular Post Widget-->
+                        <div class="sidebar-widget popular-posts">
+                            <div class="sidebar-title">
+                                <h4>Recent Posts</h4>
+                            </div>
+                            {% for post in post5 %}
+                            {% set fname = 'assets/images/'  + post.image %}
+                            
+                            <article class="post">
+                                <img src="{{url_for('static',filename=fname)}}" alt="">
+                                <div class="text">
+                                    <a href="/blogs/{{post.sno}}">{{post.title}}</a>
+                                    <div class="post-info">{{post.date}}</div>
+                                </div>
+                            </article>
+
+                            {% endfor %}
+                        </div>
+
+                        <!-- Category Widget -->
+                        <div class="sidebar-widget sidebar-blog-category">
+                            <div class="sidebar-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <ul class="blog-cat">
+                                <li><a href="#link">Foodie
+                                        <label>4</label></a></li>
+                                <li><a href="#link">Cook
+                                        <label>8</label></a></li>
+                                <li><a href="#link"> Recipes
+                                        <label>8</label></a></li>
+                                <li><a href="#link"> Guides
+                                        <label>3</label></a></li>
+                            </ul>
+                        </div>
+
+                        <!-- about Widget -->
+                        <div class="sidebar-widget about-widget">
+                            <div class="sidebar-title">
+                                <h4>About Us</h4>
+                            </div>
+                            <div class="d-flex">
+                                <div class="img-about-w3 mr-3">
+                                    <img src="{{url_for('static',filename='assets/images/testi1.jpg')}}" alt="" class="img-fluid" />
+                                </div>
+                                <div class="right-ab-block">
+                                    <h3>Dracx</h3>
+                                    <p>Welcome to Adventure Blog, your number one source for all things.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- ads Widget -->
+                        <div class="sidebar-widget">
+                            <div class="sidebar-title">
+                                <h4>Ads</h4>
+                            </div>
+                            <div class="ads-img-ab">
+                                <a href="#blog"><img src="{{url_for('static',filename='assets/images/ads.jpg')}}" class="img-fluid" alt="" /></a>
+                            </div>
+                        </div>
+                        <!-- social media Widget-->
+                        <div class="sidebar-widget social-style">
+                            <div class="sidebar-title">
+                                <h4>Social Media</h4>
+                            </div>
+                            <a href="#facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
+                            <a href="#twitter"><i class="fab fa-twitter"></i>Twitter</a>
+                            <a href="#instagram"><i class="fab fa-instagram"></i>Instagram</a>
+                            <a href="#googleplus"><i class="fab fa-google-plus-g"></i>Google Plus</a>
+                            <a href="#youtube"><i class="fab fa-youtube"></i>Youtube</a>
+                            <a href="#viemo"><i class="fab fa-vimeo-v"></i>Viemo</a>
+                        </div>
+
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //blog page -->
+
+    <!-- subscribe section -->
+    <section class="w3l-project pb-5" id="subscribe">
+        <div class="container pb-4">
+            <div class="bottom-info">
+                <div class="header-section text-center">
+                    <h3 class="title-style">Discover Adventures Journey with the Adventures Blog</p>
+                </div>
+                <form action="/" class="subscribe mt-5" method="post">
+                    <div class="input-group-text"><i class="fas fa-paper-plane"></i></div>
+                    <input type="email" name="email" placeholder="Your Email Address" required="">
+                    <button class="btn btn-style">Subscibe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- //subscribe section -->
+
+    <!-- instagram-feeds -->
+    <div class="projects" id="special">
+        <div class="projects-grids">
+            <div class="istagram-feeds">
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blog-s1.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blog-s2.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blog-s3.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blogs-s4.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blog-s5.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blog-s6.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blog-s8.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <div class="projects-w3l-grid-info">
+                    <a href="blog-single.html"><img src="{{url_for('static',filename='assets/images/blog-s7.jpg')}}" class="img-fluid" alt="" />
+                        <div class="content-overlay"></div>
+                        <div class="content-details fadeIn-top">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //instagram-feeds -->
+
+    <!-- footer -->
+  
+{% endblock content %}
