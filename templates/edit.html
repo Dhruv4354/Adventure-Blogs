@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="inner-banner py-5">
+    <div class="w3l-breadcrumb py-lg-5">
+        <div class="container pt-sm-5 pt-4 pb-sm-4">
+            <h4 class="inner-text-title font-weight-bold pt-5">Admin</h4>
+            <ul class="breadcrumbs-custom-path">
+                <li><a href="/admin">Admin</a></li>
+                <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Add / Edit Post</li>
+            </ul>
+        </div>
+    </div>
+</section> 
+<div class="form-inner-cont mx-auto" style="max-width:800px">
+    <h3 class="title-style text-center mb-4">Get In Touch</h3>
+<form action="/edit/{{sno}}" method="post" class="signin-form" enctype="multipart/form-data">
+    <div class="row align-form-map" >
+        <div class="col-sm-6 form-input">
+            <input type="text" name="title" id="title" placeholder="Title" value="{{post.title}}" />
+        </div>
+        <div class="col-sm-6 form-input">
+            <input type="text" name="postedby" id="postedby" placeholder="Posted By" value="{{post.posted_by}}" />
+        </div>
+        <div class="col-sm-6 form-input">
+            <input type="text" name="subtitle" id="subtitle" placeholder="subtitle"  required="" value="{{post.subtitle}}"/>
+        </div>
+      
+        <div class="col-sm-6 form-input">
+            <input type="text" name="image"  value="{{post.image}}" placeholder="Enter Image File name" class="contact-input">
+        </div>
+    </div>
+    <div class="form-input">
+        <textarea  placeholder="Content" name="content" id="content"  required="">{{post.content}}</textarea>
+    </div>
+    <div class="submit text-right">
+        <button type="submit" href="/edit" class="btn btn-style">Submit
+            Message</button>
+    </div>
+</form></div><br>
+{% endblock content %}

@@ -1,0 +1,16 @@
+{
+    "config":{
+        "use_local_uri":"True",
+        "local_URI": "mysql://root:@localhost/blogs",
+        "use_prod_uri":"False",
+        "prod_URI":"mysql://root:@localhost/blogs",
+        "mail_server":"smtp.gmail.com",
+        "mail_port":"465",
+        "gmail-user":"dhruvrautela586@gmail.com",
+        "gmail-passwd":"fedorahiphop87",
+        "admin":"dracx",
+        "password":"grip45",
+        "uploader":"static/assets/images/",
+        "secret_key":"mysecrectkey"
+    }
+}
