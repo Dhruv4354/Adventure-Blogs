@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 
@@ -9,13 +8,11 @@
     <title>Adventures Blog</title>
     <!-- google-fonts -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <link href="//fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap"
-        rel="stylesheet">
-    <link
-        href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
+    <link rel="icon" href="../assets/images/favicon.ico')}}">
     <link rel="stylesheet" href="{{url_for('static',filename='assets/css/style-starter.css')}}">
 </head>
 
@@ -33,9 +30,7 @@
     <a class="navbar-brand" href="#/">
         <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
     </a> -->
-                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
-                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                     <span class="navbar-toggler-icon fa icon-close fa-times"></span>
                 </button>
@@ -60,7 +55,7 @@
                     </ul>
                 </div>
                 <!-- search button -->
-               
+
                 <!-- //search button -->
                 <!-- toggle switch for light and dark theme -->
                 <div class="cont-ser-position">
@@ -84,524 +79,377 @@
     </header>
 
 
-
-
-<section class="w3l-blog py-5">
-    <div class="w3l-main-blog py-4">
-        <div class="owl-blog owl-carousel owl-theme">
-            {% for post in post1 %}
-            {% set fname = 'assets/images/' + post.image %}
-         
-<!-- Example single danger button -->
-
-
-
-            <div class="item">
-                <div class="news-img position-relative">
-                    <a href="/blogs/{{post.sno}}"><img src="{{url_for('static',filename=fname)}}" class="img-fluid img-responsive"
-                    alt="news image"></a>
-                    <div class="title-wrap">
-                        <h4 class="title"><a href="/blogs/{{post.sno}}">{{post.title}}</a></h4>
-                        <ul class="admin-list mt-2 mb-4">
-                            <li><a href="#blog"><i class="far fa-user"></i>Dracx
-                                </a></li>
-                            <li><a href="#blog"><i class="far fa-heart"></i>12 Likes</a></li>
-                            <li><a href="#blog"><i class="far fa-comment-dots"></i>9 Comments</a>
-                            </li>
-                        </ul>
-                        <p>{{post.content[0:200]}}  </p>
-                      <!-- Example split danger button -->
-                      <ul class="admin-list mt-2 mb-4">
-                       <li> <a href="/edit/{{post.sno}}"><button type="button" class="btn btn-outline-info mt3">Edit</button></a> </li>
-                     <li><a href="/delete/{{post.sno}}}"><button  type="button" class="btn btn-outline-danger mt3">Delete</button></a> </li> 
-                    </ul>
-                      
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-           
-                       </div>
-    </div>
-</section>
-
-
-
-<section class="container">
-    <div class="mt3">
-        <hr>
-        <center><br>
-            <h3>
-                Add A New Post Here
-                <small class="text-muted">With Summary of Old Post</small>
-              </h3>
-         <a href="/edit/0"><button type="button" class="btn btn-outline-danger btn-lg">Add Post</button></a> 
-        </center>
-        <hr>
-    </div>
-</section>
-<section class="w3l-project pb-5" id="subscribe">
-    <div class="container pb-4">
-        <div class="bottom-info">
-            <div class="header-section text-center">
-                <h3 class="title-style">First Add A New JPG File Here...</p>
-            </div>
-            <form action="/uploader" class="subscribe mt-5" method="post" enctype="multipart/form-data">
-                <div class="input-group-text"><i class="fas fa-paper-plane"></i></div>
-                <input type="file" name="file" placeholder="Add File Here" required="">
-                <button class="btn btn-style">Submit</button>
-            </form>
-        </div>
-    </div>
-</section>
-
-<!-- //banner blog section -->
-
-<!-- 2 col section -->
-<section class="w3l-blog-sec py-5">
-    <div class="container py-md-5 py-4">
-        <div class="row justify-content-center">
-            {% for post3 in post %}
-            
-            
-            {% set fname = 'assets/images/' + post.image %}
-            <div class="col-md-6">
-                <div class="blog-info">
-                    <div class="position-relative">
-                        <a href="/blogs/{{post.sno}}">
-                            <img class="img-fluid" src="{{url_for('static',filename=fname)}}" alt="blog-image">
-                        </a>
-                        <a href="/blogs/{{post.sno}}" class="category-style">{{post.category_style}}</a>
-                    </div>
-                    <div class="title-wrap title-wrap-2">
-                        <h4 class="title"><a href="#blog">{{post.title}}</a></h4>
-                        <ul class="admin-list mt-2 mb-4">
-                            <li><a href="#blog"><i class="far fa-user"></i>Dracx
-                                </a></li>
-                            <li><a href="#blog"><i class="far fa-heart"></i>12 Likes</a></li>
-                            <li><a href="#blog"><i class="far fa-comment-dots"></i>9 Comments</a>
-                            </li>
-                        </ul>
-                        <p>{{post.content}}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-       
-        </div>
-    </div>
-</section>
-<!-- //2 col section -->
-
-<!-- 3 col section -->
-<section class="w3l-blog-sec">
-    <div class="container">
-        <div class="row justify-content-center">
-            {% for post4 in post %}
-            {% set fname = 'assets/images/' + post.image %}
-       
-            <div class="col-xl-4 col-md-6 mt-md-0 mt-4">
-                <div class="blog-info">
-                    <div class="position-relative">
-                        <a href="/blogs/{{post.sno}}">
-                            <img class="img-fluid" src="{{url_for('static',filename=fname)}}" alt="blog-image">
-                        </a>
-                        <a href="/blogs/{{post.sno}}" class="category-style">{{post.category_style}}</a>
-                    </div>
-                    <div class="title-wrap title-wrap-2">
-                        <h4 class="title"><a href="#blog">{{post.title}}</a></h4>
-                        <ul class="admin-list mt-2 mb-4">
-                            <li><a href="#blog"><i class="far fa-user"></i>Dracx
-                                </a></li>
-                            <li><a href="#blog"><i class="far fa-heart"></i>14 Likes</a></li>
-                            <li><a href="#blog"><i class="far fa-comment-dots"></i>9 Comments</a>
-                            </li>
-                        </ul>
-                        <p>{{post.content}}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //3 col section -->
-
-<!-- bg with video icon -->
-<section class="w3l-covers-14 pt-5">
-    <div class="container pt-md-5 pt-4">
-        <div class="blog-play-w3 text-center py-5">
-            <div class="mx-auto py-5 px-4" style="max-width:450px;">
-                <h3 class="title-style text-white">We don't just cook, we thread you to delicacies...</h3>
-                <ul class="admin-list mt-4 mb-4">
-                    <li><a href="#blog" class="text-white"><i class="far fa-user"></i>Dracx
-                        </a></li>
-                    <li><a href="#blog" class="text-white"><i class="far fa-heart"></i>10 Likes</a></li>
-                    <li><a href="#blog" class="text-white"><i class="far fa-comment-dots"></i>9
-                            Comments</a>
-                    </li>
-                </ul>
-                <div class="video-section mt-5 pt-4 pb-5">
-                    <!--//video-->
-                    <a href="#small-dialog" class="popup-with-zoom-anim play-view text-center pl-3">
-                        <span class="video-play-icon">
-                            <span class="fas fa-play"></span>
-                        </span>
-                    </a>
-                    <!-- dialog itself, mfp-hide class is required to make dialog hidden -->
-                    <div id="small-dialog" class="zoom-anim-dialog mfp-hide">
-                        <iframe width="853" height="480" src="https://www.youtube.com/embed/IUN664s7N-c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        
-                    </div>
-                    <!--//video-->
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //bg with video icon -->
-
-<!-- blog page -->
-<section class="w3l-text-11 py-5">
-    <div class="container py-md-5 py-4">
-        <div class="row">
-            <div class="col-lg-8 text11-content">
-                <div class="row">
-                    {% for post in post2 %}
-                    
-                    {% set fname = 'assets/images/' + post.image %}
-                    <div class="col-sm-6 card mt-sm-0 mt-4">
-                        <div class="card-header p-0 position-relative border-0"><div class="card-header p-0 position-relative border-0"></div>
-                            <a href="/blogs/{{post.sno}}">
-                                <img class="card-img-bottom d-block radius-image" src="{{url_for('static',filename=fname)}}"
-                                    alt="Card image cap">
-                            </a>
-                            <a href="/blogs/{{post.sno}}" class="category-style">{{post.category_style}}</a>
-                        </div>
-                        <div class="title-wrap title-wrap-2">
-                            <h4 class="title"><a href="/blogs/{{post.sno}}">{{post.title}}</a></h4>
-                            <ul class="admin-list mt-2 mb-4">
-                                <li><a href="#blog"><i class="far fa-user"></i>Dracx
+    <!-- blog page -->
+    <section class="w3l-text-11 py-5">
+        <div class="container py-md-5 py-4">
+            <div class="row">
+                <div class="col-lg-8 text11-content">
+                    <div class="row">
+                        {% for post in post %} {% set fname = 'assets/images/' + post.image %}
+                        <div class="col-sm-6 card mt-sm-0 mt-4">
+                            <div class="card-header p-0 position-relative border-0">
+                                <div class="card-header p-0 position-relative border-0"></div>
+                                <a href="/blogs/{{post.sno}}">
+                                    <img class="card-img-bottom d-block radius-image" src="{{url_for('static',filename=fname)}}" alt="Card image cap">
+                                </a>
+                                <a href="/blogs/{{post.sno}}" class="category-style">{{post.category_style}}</a>
+                            </div>
+                            <div class="title-wrap title-wrap-2">
+                                <h4 class="title"><a href="/blogs/{{post.sno}}">{{post.title}}</a></h4>
+                                <ul class="admin-list mt-2 mb-4">
+                                    <li><a href="#blog"><i class="far fa-user"></i>Dracx
                                     </a></li>
-                                <li><a href="#blog"><i class="far fa-heart"></i>16 Likes</a></li>
-                                <li><a href="#blog"><i class="far fa-comment-dots"></i>3 Comments</a>
-                                </li>
-                            </ul>
-                            <p>{{post.content[0:200]}}...
-                            </p>
-                        </div>
-                    </div>
-                    {% endfor %}
+                                    <li><a href="#blog"><i class="far fa-heart"></i>16 Likes</a></li>
+                                    <li><a href="#blog"><i class="far fa-comment-dots"></i>3 Comments</a>
+                                    </li>
+                                </ul>
+                                <p>{{post.content[0:200]}}...
+                                </p>
+                                <div class="item">
 
+                                    <!-- Example split danger button -->
+                                    <ul class="admin-list mt-2 mb-4">
+                                        <li> <a href="/edit/{{post.sno}}"><button type="button" class="btn btn-outline-info mt3">Edit</button></a> </li>
+                                        <li><a href="/delete/{{post.sno}}}"><button  type="button" class="btn btn-outline-danger mt3">Delete</button></a> </li>
+                                    </ul>
 
-
-
-                    
-                        </div>
-                    </div>
-               
-
-            <div class="sidebar-side col-lg-4 pl-lg-5 mt-lg-0 mt-5">
-                <aside class="sidebar">
-                    <!-- Popular Post Widget-->
-                    <div class="sidebar-widget popular-posts">
-                        <div class="sidebar-title">
-                            <h4>Recent Posts</h4>
-                        </div>
-                        {% for post in post5 %}
-                        {% set fname = 'assets/images/'  + post.image %}
-                        
-                        <article class="post">
-                            <img src="{{url_for('static',filename=fname)}}" alt="">
-                            <div class="text">
-                                <a href="/blogs/{{post.sno}}">{{post.title}}</a>
-                                <div class="post-info">{{post.date}}</div>
+                                </div>
                             </div>
-                        </article>
-
+                        </div>
                         {% endfor %}
-                    </div>
 
-                    <!-- Category Widget -->
-                    <div class="sidebar-widget sidebar-blog-category">
-                        <div class="sidebar-title">
-                            <h4>Categories</h4>
+
+
+
+
+                    </div>
+                </div>
+
+
+                <div class="sidebar-side col-lg-4 pl-lg-5 mt-lg-0 mt-5">
+                    <aside class="sidebar">
+                        <!-- Popular Post Widget-->
+                        <div class="sidebar-widget popular-posts">
+                            <div class="sidebar-title">
+                                <h4>Recent Posts</h4>
+                            </div>
+                            {% for post in post5 %} {% set fname = 'assets/images/' + post.image %}
+
+                            <article class="post">
+                                <img src="{{url_for('static',filename=fname)}}" alt="">
+                                <div class="text">
+                                    <a href="/blogs/{{post.sno}}">{{post.title}}</a>
+                                    <div class="post-info">{{post.date}}</div>
+                                </div>
+                            </article>
+
+                            {% endfor %}
                         </div>
-                        <ul class="blog-cat">
-                            <li><a href="#link">Foodie
-                                    <label>4</label></a></li>
-                            <li><a href="#link">Cook
+
+                        <!-- Category Widget -->
+                        <div class="sidebar-widget sidebar-blog-category">
+                            <div class="sidebar-title">
+                                <h4>Categories</h4>
+                            </div>
+                            <ul class="blog-cat">
+                                <li><a href="#link">Desert
+                                    <label>{{desert}}</label></a></li>
+                                <li><a href="#link">Cook
                                     <label>8</label></a></li>
-                            <li><a href="#link"> Recipes
+                                <li><a href="#link"> Recipes
                                     <label>8</label></a></li>
-                            <li><a href="#link"> Guides
+                                <li><a href="#link"> Guides
                                     <label>3</label></a></li>
-                        </ul>
-                    </div>
-
-                    <!-- about Widget -->
-                    <div class="sidebar-widget about-widget">
-                        <div class="sidebar-title">
-                            <h4>About Us</h4>
+                            </ul>
                         </div>
-                        <div class="d-flex">
-                            <div class="img-about-w3 mr-3">
-                                <img src="{{url_for('static',filename='assets/images/testi1.jpg')}}" alt="" class="img-fluid" />
+
+                        <!-- about Widget -->
+                        <div class="sidebar-widget about-widget">
+                            <div class="sidebar-title">
+                                <h4>About Us</h4>
                             </div>
-                            <div class="right-ab-block">
-                                <h3>Dracx</h3>
-                                <p>Welcome to Adventure Blog, your number one source for all things.</p>
+                            <div class="d-flex">
+                                <div class="img-about-w3 mr-3">
+                                    <img src="{{url_for('static',filename='assets/images/testi1.jpg')}}" alt="" class="img-fluid" />
+                                </div>
+                                <div class="right-ab-block">
+                                    <h3>Dracx</h3>
+                                    <p>Welcome to Adventure Blog, your number one source for all things.</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!-- ads Widget -->
-                    <div class="sidebar-widget">
-                        <div class="sidebar-title">
-                            <h4>Ads</h4>
+                        <!-- ads Widget -->
+                        <div class="sidebar-widget">
+                            <div class="sidebar-title">
+                                <h4>Ads</h4>
+                            </div>
+                            <div class="ads-img-ab">
+                                <a href="#blog"><img src="{{url_for('static',filename='assets/images/ads.jpg')}}" class="img-fluid" alt="" /></a>
+                            </div>
                         </div>
-                        <div class="ads-img-ab">
-                            <a href="#blog"><img src="{{url_for('static',filename='assets/images/ads.jpg')}}" class="img-fluid" alt="" /></a>
+                        <!-- social media Widget-->
+                        <div class="sidebar-widget social-style">
+                            <div class="sidebar-title">
+                                <h4>Social Media</h4>
+                            </div>
+                            <a href="#facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
+                            <a href="#twitter"><i class="fab fa-twitter"></i>Twitter</a>
+                            <a href="#instagram"><i class="fab fa-instagram"></i>Instagram</a>
+                            <a href="#googleplus"><i class="fab fa-google-plus-g"></i>Google Plus</a>
+                            <a href="#youtube"><i class="fab fa-youtube"></i>Youtube</a>
+                            <a href="#viemo"><i class="fab fa-vimeo-v"></i>Viemo</a>
                         </div>
-                    </div>
-                    <!-- social media Widget-->
-                    <div class="sidebar-widget social-style">
-                        <div class="sidebar-title">
-                            <h4>Social Media</h4>
-                        </div>
-                        <a href="#facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
-                        <a href="#twitter"><i class="fab fa-twitter"></i>Twitter</a>
-                        <a href="#instagram"><i class="fab fa-instagram"></i>Instagram</a>
-                        <a href="#googleplus"><i class="fab fa-google-plus-g"></i>Google Plus</a>
-                        <a href="#youtube"><i class="fab fa-youtube"></i>Youtube</a>
-                        <a href="#viemo"><i class="fab fa-vimeo-v"></i>Viemo</a>
-                    </div>
 
-                </aside>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //blog page -->
-
-<!-- subscribe section -->
-
-
-
-
-
-<footer class="w3l-footer-29-main">
-    <div class="footer-29 py-5">
-        <div class="container py-sm-4">
-            <div class="row footer-top-29">
-                <div class="col-lg-5 col-md-6 footer-list-29 footer-1">
-                    <h2 class="mb-4">
-                        <a class="footer-logo" href="/">
-                            Adventure<span>s</span> Blog<i class="fas fa-utensils"></i>
-                        </a>
-                    </h2>
-                    <p>Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at
-                        tempufddfel. Lorem ipsum dolor sit amet Semper at elit team advisors.</p>
-                    <div class="main-social-footer-29 mt-md-4 mt-3">
-                        <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="#instagram" class="instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#linkedin" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-
-                <div class="col-xl-5 col-lg-4 col-md-6 footer-list-29 footer-1 px-xl-5 mt-md-0 mt-5">
-                    <h6 class="footer-title-29">Contact Info </h6>
-                    <p class="mb-2">Address : Adventures Blog, 10001, 5th Avenue, #06 lane street, NY - 62617.
-                    </p>
-                    <p class="mb-2">Phone Number : <a href="tel:+1(21) 234 4567">+1(21) 234 4567</a></p>
-                    <p class="mb-2">Email : <a href="mailto:info@example.com">info@example.com</a></p>
-                    <p>Support : <a href="mailto:info@support.com">info@support.com</a></p>
-                </div>
-
-                <div class="col-xl-2 col-lg-3 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-lg-0 mt-5">
-                    <ul>
-                        <h6 class="footer-title-29">Help</h6>
-                        <li><a href="#support">Support</a></li>
-                        <li><a href="#privacy">Privacy policy</a></li>
-                        <li><a href="#terms">Terms & conditions</a></li>
-                        <li><a href="#license">License & uses</a></li>
-                        <li><a href="/contact">Contact Us</a></li>
-                    </ul>
+                    </aside>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- copyright -->
-    <section class="w3l-copyright text-center">
-        <div class="container">
-            <p class="copy-footer-29">© 2021 Adventures Blog Blog. All rights reserved. Design by <a
-                    href="https://w3layouts.com/" target="_blank">
-                    W3Layouts</a></p>
         </div>
     </section>
-    <!-- //copyright -->
-</footer>
-<!-- //footer -->
+    <!-- //blog page -->
 
-<!-- Js scripts -->
-<!-- move top -->
-<button onclick="topFunction()" id="movetop" title="Go to top">
+    <section class="container">
+        <div class="mt3">
+            <hr>
+            <center><br>
+                <h3>
+                    Add A New Post Here
+                    <small class="text-muted">With Summary of Old Post</small>
+                </h3>
+                <a href="/edit/0"><button type="button" class="btn btn-outline-danger btn-lg">Add Post</button></a>
+            </center>
+            <hr>
+        </div>
+    </section>
+    <section class="w3l-project pb-5" id="subscribe">
+        <div class="container pb-4">
+            <div class="bottom-info">
+                <div class="header-section text-center">
+                    <h3 class="title-style">First Add A New JPG File Here...</p>
+                </div>
+                <form action="/uploader" class="subscribe mt-5" method="post" enctype="multipart/form-data">
+                    <div class="input-group-text"><i class="fas fa-paper-plane"></i></div>
+                    <input type="file" name="file" placeholder="Add File Here" required="">
+                    <button class="btn btn-style">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- subscribe section -->
+
+
+
+
+
+    <footer class="w3l-footer-29-main">
+        <div class="footer-29 py-5">
+            <div class="container py-sm-4">
+                <div class="row footer-top-29">
+                    <div class="col-lg-5 col-md-6 footer-list-29 footer-1">
+                        <h2 class="mb-4">
+                            <a class="footer-logo" href="/">
+                            Adventure<span>s</span> Blog<i class="fas fa-utensils"></i>
+                        </a>
+                        </h2>
+                        <p>Lorem ipsum viverra feugiat. Pellen tesque libero ut justo, ultrices in ligula. Semper at tempufddfel. Lorem ipsum dolor sit amet Semper at elit team advisors.</p>
+                        <div class="main-social-footer-29 mt-md-4 mt-3">
+                            <a href="#facebook" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#twitter" class="twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#instagram" class="instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#linkedin" class="linkedin"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="col-xl-5 col-lg-4 col-md-6 footer-list-29 footer-1 px-xl-5 mt-md-0 mt-5">
+                        <h6 class="footer-title-29">Contact Info </h6>
+                        <p class="mb-2">Address : Adventures Blog, 10001, 5th Avenue, #06 lane street, NY - 62617.
+                        </p>
+                        <p class="mb-2">Phone Number : <a href="tel:+1(21) 234 4567">+1(21) 234 4567</a></p>
+                        <p class="mb-2">Email : <a href="mailto:info@example.com">info@example.com</a></p>
+                        <p>Support : <a href="mailto:info@support.com">info@support.com</a></p>
+                    </div>
+
+                    <div class="col-xl-2 col-lg-3 col-md-6 col-sm-5 col-6 footer-list-29 footer-2 mt-lg-0 mt-5">
+                        <ul>
+                            <h6 class="footer-title-29">Help</h6>
+                            <li><a href="#support">Support</a></li>
+                            <li><a href="#privacy">Privacy policy</a></li>
+                            <li><a href="#terms">Terms & conditions</a></li>
+                            <li><a href="#license">License & uses</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- copyright -->
+        <section class="w3l-copyright text-center">
+            <div class="container">
+                <p class="copy-footer-29">© 2021 Adventures Blog Blog. All rights reserved. Design by <a href="https://w3layouts.com/" target="_blank">
+                    W3Layouts</a></p>
+            </div>
+        </section>
+        <!-- //copyright -->
+    </footer>
+    <!-- //footer -->
+
+    <!-- Js scripts -->
+    <!-- move top -->
+    <button onclick="topFunction()" id="movetop" title="Go to top">
     <span class="fas fa-level-up-alt" aria-hidden="true"></span>
 </button>
-<script>
-    // When the user scrolls down 20px from the top of the document, show the button
-    window.onscroll = function () {
-        scrollFunction()
-    };
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {
+            scrollFunction()
+        };
 
-    function scrollFunction() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            document.getElementById("movetop").style.display = "block";
-        } else {
-            document.getElementById("movetop").style.display = "none";
-        }
-    }
-
-    // When the user clicks on the button, scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-</script>
-<!-- //move top -->
-
-<!-- common jquery plugin -->
-<script src="{{url_for('static',filename='assets/js/jquery-3.3.1.min.js')}}"></script>
-<!-- //common jquery plugin -->
-
-<!-- banner slider -->
-<script src="{{url_for('static',filename='assets/js/owl.carousel.js')}}"></script>
-<script>
-    $(document).ready(function () {
-        $('.owl-blog').owlCarousel({
-            stagePadding: 200,
-            loop: true,
-            nav: false,
-            responsiveClass: true,
-            autoplay: true,
-            autoplayTimeout: 5000,
-            autoplaySpeed: 1000,
-            autoplayHoverPause: false,
-            responsive: {
-                0: {
-                    items: 1,
-                    stagePadding: 40,
-                    nav: false
-                },
-                480: {
-                    items: 1,
-                    stagePadding: 40,
-                    nav: true
-                },
-                667: {
-                    items: 2,
-                    stagePadding: 50,
-                    nav: true
-                },
-                1000: {
-                    items: 2,
-                    nav: true
-                }
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
             }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+
+    <!-- common jquery plugin -->
+    <script src="{{url_for('static',filename='assets/js/jquery-3.3.1.min.js')}}"></script>
+    <!-- //common jquery plugin -->
+
+    <!-- banner slider -->
+    <script src="{{url_for('static',filename='assets/js/owl.carousel.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.owl-blog').owlCarousel({
+                stagePadding: 200,
+                loop: true,
+                nav: false,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplaySpeed: 1000,
+                autoplayHoverPause: false,
+                responsive: {
+                    0: {
+                        items: 1,
+                        stagePadding: 40,
+                        nav: false
+                    },
+                    480: {
+                        items: 1,
+                        stagePadding: 40,
+                        nav: true
+                    },
+                    667: {
+                        items: 2,
+                        stagePadding: 50,
+                        nav: true
+                    },
+                    1000: {
+                        items: 2,
+                        nav: true
+                    }
+                }
+            })
         })
-    })
-</script>
-<!-- //banner slider -->
+    </script>
+    <!-- //banner slider -->
 
-<!-- magnific popup -->
-<script src="{{url_for('static',filename='assets/js/jquery.magnific-popup.min.js')}}"></script>
-<script>
-    $(document).ready(function () {
-        $('.popup-with-zoom-anim').magnificPopup({
-            type: 'inline',
+    <!-- magnific popup -->
+    <script src="{{url_for('static',filename='assets/js/jquery.magnific-popup.min.js')}}"></script>
+    <script>
+        $(document).ready(function() {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
 
-            fixedContentPos: false,
-            fixedBgPos: true,
+                fixedContentPos: false,
+                fixedBgPos: true,
 
-            overflowY: 'auto',
+                overflowY: 'auto',
 
-            closeBtnInside: true,
-            preloader: false,
+                closeBtnInside: true,
+                preloader: false,
 
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-zoom-in'
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+            $('.popup-with-move-anim').magnificPopup({
+                type: 'inline',
+
+                fixedContentPos: false,
+                fixedBgPos: true,
+
+                overflowY: 'auto',
+
+                closeBtnInside: true,
+                preloader: false,
+
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-slide-bottom'
+            });
+        });
+    </script>
+    <!-- //magnific popup -->
+
+    <!-- theme switch js (light and dark)-->
+    <script src="{{url_for('static',filename='assets/js/theme-change.js')}}"></script>
+    <!-- //theme switch js (light and dark)-->
+
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function() {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
         });
 
-        $('.popup-with-move-anim').magnificPopup({
-            type: 'inline',
-
-            fixedContentPos: false,
-            fixedBgPos: true,
-
-            overflowY: 'auto',
-
-            closeBtnInside: true,
-            preloader: false,
-
-            midClick: true,
-            removalDelay: 300,
-            mainClass: 'my-mfp-slide-bottom'
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function() {
+            $("header").toggleClass("active");
         });
-    });
-</script>
-<!-- //magnific popup -->
-
-<!-- theme switch js (light and dark)-->
-<script src="{{url_for('static',filename='assets/js/theme-change.js')}}"></script>
-<!-- //theme switch js (light and dark)-->
-
-<!-- MENU-JS -->
-<script>
-    $(window).on("scroll", function () {
-        var scroll = $(window).scrollTop();
-
-        if (scroll >= 80) {
-            $("#site-header").addClass("nav-fixed");
-        } else {
-            $("#site-header").removeClass("nav-fixed");
-        }
-    });
-
-    //Main navigation Active Class Add Remove
-    $(".navbar-toggler").on("click", function () {
-        $("header").toggleClass("active");
-    });
-    $(document).on("ready", function () {
-        if ($(window).width() > 991) {
-            $("header").removeClass("active");
-        }
-        $(window).on("resize", function () {
+        $(document).on("ready", function() {
             if ($(window).width() > 991) {
                 $("header").removeClass("active");
             }
+            $(window).on("resize", function() {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
         });
-    });
-</script>
-<!-- //MENU-JS -->
+    </script>
+    <!-- //MENU-JS -->
 
-<!-- disable body scroll which navbar is in active -->
-<script>
-    $(function () {
-        $('.navbar-toggler').click(function () {
-            $('body').toggleClass('noscroll');
-        })
-    });
-</script>
-<!-- //disable body scroll which navbar is in active -->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function() {
+            $('.navbar-toggler').click(function() {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
 
-<!-- bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-<script src="{{url_for('static',filename='assets/js/bootstrap.min.js')}}"></script>
-<!-- //bootstrap -->
-<!-- //Js scripts -->
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="{{url_for('static',filename='assets/js/bootstrap.min.js')}}"></script>
+    <!-- //bootstrap -->
+    <!-- //Js scripts -->
 </body>
 
 </html>

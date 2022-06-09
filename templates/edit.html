@@ -1,5 +1,4 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 
 
@@ -32,31 +31,35 @@
             </ul>
         </div>
     </div>
-</section> 
+</section>
 <div class="form-inner-cont mx-auto" style="max-width:800px">
     <h3 class="title-style text-center mb-4">Get In Touch</h3>
-<form action="/edit/{{sno}}" method="post" class="signin-form" enctype="multipart/form-data">
-    <div class="row align-form-map" >
-        <div class="col-sm-6 form-input">
-            <input type="text" name="title" id="title" placeholder="Title" value="{{post.title}}" />
+    <form action="/edit/{{sno}}" method="post" class="signin-form" enctype="multipart/form-data">
+        <div class="row align-form-map">
+            <div class="col-sm-6 form-input">
+                <input type="text" name="title" id="title" placeholder="Title" value="{{post.title}}" />
+            </div>
+            <div class="col-sm-6 form-input">
+                <input type="text" name="postedby" id="postedby" placeholder="Posted By" value="{{post.posted_by}}" />
+            </div>
+            <div class="col-sm-6 form-input">
+                <input type="text" name="subtitle" id="subtitle" placeholder="subtitle" required="" value="{{post.subtitle}}" />
+            </div>
+
+            <div class="col-sm-6 form-input">
+                <input type="text" name="image" value="{{post.image}}" placeholder="Enter Image File name" class="contact-input">
+            </div>
         </div>
-        <div class="col-sm-6 form-input">
-            <input type="text" name="postedby" id="postedby" placeholder="Posted By" value="{{post.posted_by}}" />
+        <div class="form-input">
+            <input type="text" value="{{post.category_style}}" placeholder="Enter The Category of The Post Ex. Nature ,Adventure , Wildlife, etc." name="category" id="category">
         </div>
-        <div class="col-sm-6 form-input">
-            <input type="text" name="subtitle" id="subtitle" placeholder="subtitle"  required="" value="{{post.subtitle}}"/>
+        <div class="form-input">
+            <textarea placeholder="Content" name="content" id="content" required="">{{post.content}}</textarea>
         </div>
-      
-        <div class="col-sm-6 form-input">
-            <input type="text" name="image"  value="{{post.image}}" placeholder="Enter Image File name" class="contact-input">
+
+        <div class="submit text-right">
+            <button type="submit" href="/edit" class="btn btn-style">Submit
+            Post</button>
         </div>
-    </div>
-    <div class="form-input">
-        <textarea  placeholder="Content" name="content" id="content"  required="">{{post.content}}</textarea>
-    </div>
-    <div class="submit text-right">
-        <button type="submit" href="/edit" class="btn btn-style">Submit
-            Message</button>
-    </div>
-</form></div><br>
-{% endblock content %}
+    </form>
+</div><br> {% endblock content %}
